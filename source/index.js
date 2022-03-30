@@ -8,8 +8,10 @@ const logger = (0, winston_1.createLogger)({
     format: winston_1.format.combine(winston_1.format.colorize(), winston_1.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss.ms" }), logFormat),
     transports: [
         new winston_1.transports.Console(),
-        new winston_1.transports.File({ filename: "error.log", level: "error" }),
-        new winston_1.transports.File({ filename: "combined.log" }),
+        new winston_1.transports.File({
+            filename: "error.log",
+            level: "error",
+        }),
     ],
 });
 exports.default = logger;
